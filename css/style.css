@@ -1349,8 +1349,27 @@ h1,h2,h3,h4,h5,h6 { color: var(--text-white); font-weight: 700; line-height: 1.2
   letter-spacing: .5px;
   margin-top: .2rem;
 }
-.role-coordinator { background: rgba(124,58,237,.16); color: var(--purple-bright); border: 1px solid rgba(124,58,237,.28); }
-.role-member      { background: rgba(255,255,255,.07); color: var(--text-mute); }
+.role-coordinator     { background: rgba(124,58,237,.16); color: var(--purple-bright); border: 1px solid rgba(124,58,237,.28); }
+.role-sub-coordinator { background: rgba(245,158,11,.14); color: #f59e0b; border: 1px solid rgba(245,158,11,.28); }
+.role-member          { background: rgba(255,255,255,.07); color: var(--text-mute); }
+.member-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  margin-top: .35rem;
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--purple-bright);
+  text-decoration: none;
+  letter-spacing: .2px;
+  transition: opacity .2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.member-phone:hover { opacity: .75; }
+.member-phone svg   { width: 11px; height: 11px; flex-shrink: 0; }
 
 
 /* ============================
