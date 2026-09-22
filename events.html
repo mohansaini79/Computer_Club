@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events – SUG Computer Club – Web Craft</title>
+  <meta name="description" content="View upcoming and past events for the SUG Computer Club – Web Craft sessions during the 2026–27 academic year." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <!-- Global ambient glow mesh -->
+  <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;">
+    <div style="position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.18) 0%,transparent 70%);top:-100px;right:-100px;"></div>
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,.12) 0%,transparent 70%);bottom:20%;left:-150px;"></div>
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.08) 0%,transparent 70%);bottom:-100px;right:20%;"></div>
+  </div>
+  <canvas id="particles-bg" aria-hidden="true"></canvas>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="SUG Computer Club Home">
+        <div class="logo-icon" aria-hidden="true"><i data-lucide="monitor-dot"></i></div>
+        <div class="logo-text"><span class="logo-main">SUG Computer Club</span><span class="logo-sub">Web Craft</span></div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="activities.html" class="nav-link" role="menuitem">Activities</a></li>
+        <li role="none"><a href="members.html" class="nav-link" role="menuitem">Members</a></li>
+        <li role="none"><a href="events.html" class="nav-link active" role="menuitem">Events</a></li>
+        <li role="none"><a href="gallery.html" class="nav-link" role="menuitem">Gallery</a></li>
+        <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+        <li role="none"><button onclick="openJoinModal()" class="btn btn-primary nav-cta" role="menuitem">Join Club</button></li>
+      </ul>
+      </div>    </div>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container" data-animate="fade-up">
+      <span class="section-tag">Schedule</span>
+      <h1>Events & Sessions</h1>
+      <p>All scheduled Web Craft sessions for the 2026–27 academic year.</p>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="events-heading">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-tag">2026–27</span>
+        <h2 class="section-title" id="events-heading">Session Schedule</h2>
+        <p class="section-desc">Each event is a hands-on, practical session designed to build web development skills progressively.</p>
+      </div>
+      <div class="events-grid" data-animate="fade-up">
+
+        <div class="event-card">
+          <div class="event-card-accent" style="background:var(--c-html)"></div>
+          <div class="event-card-body">
+            <div class="event-card-top">
+              <span class="act-tech-badge html-badge">HTML</span>
+              <span class="timeline-status status-completed">Completed</span>
+            </div>
+            <h3>HTML – Basics & Basic Web Page Creation</h3>
+            <p>Develop foundational HTML skills and create a basic webpage with semantic elements, forms, and tables.</p>
+            <div class="event-card-footer">
+              <span><i data-lucide="calendar" aria-hidden="true"></i> 14 Sep 2026</span>
+              <span><i data-lucide="users" aria-hidden="true"></i> All Members</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-accent" style="background:var(--c-css)"></div>
+          <div class="event-card-body">
+            <div class="event-card-top">
+              <span class="act-tech-badge css-badge">CSS</span>
+              <span class="timeline-status status-next">Up Next</span>
+            </div>
+            <h3>CSS – Web Page Design & Styling</h3>
+            <p>Apply CSS for attractive, structured, and user-friendly webpage design including flexbox, grid, and typography.</p>
+            <div class="event-card-footer">
+              <span><i data-lucide="calendar" aria-hidden="true"></i> 12 Oct 2026</span>
+              <span><i data-lucide="users" aria-hidden="true"></i> All Members</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-accent" style="background:var(--c-js)"></div>
+          <div class="event-card-body">
+            <div class="event-card-top">
+              <span class="act-tech-badge js-badge">JS</span>
+              <span class="timeline-status status-upcoming">Upcoming</span>
+            </div>
+            <h3>JavaScript – Forms & Validation</h3>
+            <p>Develop interactive forms and implement basic JavaScript validation, DOM manipulation, and event handling.</p>
+            <div class="event-card-footer">
+              <span><i data-lucide="calendar" aria-hidden="true"></i> 09 Nov 2026</span>
+              <span><i data-lucide="users" aria-hidden="true"></i> All Members</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-accent" style="background:var(--c-rwd)"></div>
+          <div class="event-card-body">
+            <div class="event-card-top">
+              <span class="act-tech-badge rwd-badge">RWD</span>
+              <span class="timeline-status status-upcoming">Upcoming</span>
+            </div>
+            <h3>Responsive Web Design</h3>
+            <p>Create webpages that work effectively on different screen sizes using media queries and mobile-first design.</p>
+            <div class="event-card-footer">
+              <span><i data-lucide="calendar" aria-hidden="true"></i> 30 Jan 2027</span>
+              <span><i data-lucide="users" aria-hidden="true"></i> All Members</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-accent" style="background:var(--c-php)"></div>
+          <div class="event-card-body">
+            <div class="event-card-top">
+              <span class="act-tech-badge php-badge">PHP</span>
+              <span class="timeline-status status-upcoming">Upcoming</span>
+            </div>
+            <h3>PHP – Backend & Database Connectivity</h3>
+            <p>Develop server-side applications using PHP and connect webpages with MySQL databases for CRUD operations.</p>
+            <div class="event-card-footer">
+              <span><i data-lucide="calendar" aria-hidden="true"></i> 20 Feb 2027</span>
+              <span><i data-lucide="users" aria-hidden="true"></i> All Members</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-accent" style="background:var(--c-int)"></div>
+          <div class="event-card-body">
+            <div class="event-card-top">
+              <span class="act-tech-badge int-badge">INT</span>
+              <span class="timeline-status status-upcoming">Upcoming</span>
+            </div>
+            <h3>Frontend–Backend Integration</h3>
+            <p>Connect HTML, CSS, JavaScript with PHP/Python backend and exchange data between frontend and server.</p>
+            <div class="event-card-footer">
+              <span><i data-lucide="calendar" aria-hidden="true"></i> 01 Mar 2027</span>
+              <span><i data-lucide="users" aria-hidden="true"></i> All Members</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card-accent" style="background:var(--c-proj)"></div>
+          <div class="event-card-body">
+            <div class="event-card-top">
+              <span class="act-tech-badge proj-badge">PROJECT</span>
+              <span class="timeline-status status-upcoming">Upcoming</span>
+            </div>
+            <h3>Mini Website Development & Presentation</h3>
+            <p>Develop, present, and evaluate a complete mini website as a capstone project with peer review and faculty evaluation.</p>
+            <div class="event-card-footer">
+              <span><i data-lucide="calendar" aria-hidden="true"></i> 05 Mar 2027</span>
+              <span><i data-lucide="users" aria-hidden="true"></i> All Members</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" aria-labelledby="ev-cta-heading">
+    <div class="container cta-container" data-animate="fade-up">
+      <div class="cta-content">
+        <h2 class="cta-title" id="ev-cta-heading">Don't Miss Out</h2>
+        <p class="cta-desc">Join the club to participate in all upcoming sessions.</p>
+        <button onclick="openJoinModal()" class="btn btn-white btn-lg"><i data-lucide="user-plus" aria-hidden="true"></i> Join the Club</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><i data-lucide="monitor-dot" aria-hidden="true"></i><div><span class="footer-logo-main">SUG Computer Club</span><span class="footer-logo-sub">Web Craft</span></div></div><p class="footer-tagline">A creative space for designing, developing, and experiencing the power of the web.</p></div>
+      <nav class="footer-nav" aria-label="Footer navigation"><h4 class="footer-heading">Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="activities.html">Activities</a></li><li><a href="members.html">Members</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <div class="footer-contact"><h4 class="footer-heading">Faculty Coordinator</h4><p class="footer-coord-name">Mr. Jitendra Kumar Saini</p><p class="footer-coord-dept">Department of CSE</p><a href="tel:7669110295" class="footer-contact-link"><i data-lucide="phone" aria-hidden="true"></i> 7669110295</a></div>
+      <div class="footer-uni" style="grid-column:1/-1;">
+        <img src="assets/logo/logo.png" alt="Shobhit University" width="52" height="52" />
+        <div class="footer-uni-text">
+          <strong>Shobhit University, Gangoh</strong>
+          <span>Department of Computer Science &amp; Engineering</span>
+        </div>
+      </div>    </div>
+    <div class="footer-bottom"><div class="container"><p>&copy; 2026 SUG Computer Club – Web Craft. All rights reserved.</p></div></div>
+  </footer>
+
+  <div class="modal-overlay" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close registration form"><i data-lucide="x"></i></button>
+      <div class="modal-header"><div class="modal-icon"><i data-lucide="user-plus" aria-hidden="true"></i></div><h2 class="modal-title" id="modal-title">Join Web Craft</h2><p>Fill in your details to register your interest.</p></div>
+      <form class="join-form" id="joinForm" novalidate>
+        <div class="form-row"><div class="form-group"><label for="reg-name">Full Name <span aria-hidden="true">*</span></label><input type="text" id="reg-name" name="name" placeholder="Your full name" required autocomplete="name" /><span class="form-error" role="alert"></span></div><div class="form-group"><label for="reg-email">Email <span aria-hidden="true">*</span></label><input type="email" id="reg-email" name="email" placeholder="your@email.com" required autocomplete="email" /><span class="form-error" role="alert"></span></div></div>
+        <div class="form-row"><div class="form-group"><label for="reg-course">Course <span aria-hidden="true">*</span></label><select id="reg-course" name="course" required><option value="">Select Course</option><option value="B.Tech(CSE)">B.Tech (CSE)</option><option value="BCA">BCA</option><option value="Other">Other</option></select><span class="form-error" role="alert"></span></div><div class="form-group"><label for="reg-year">Year <span aria-hidden="true">*</span></label><select id="reg-year" name="year" required><option value="">Select Year</option><option value="1st">1st Year</option><option value="2nd">2nd Year</option><option value="3rd">3rd Year</option><option value="4th">4th Year</option></select><span class="form-error" role="alert"></span></div></div>
+        <div class="form-group"><label for="reg-phone">Phone Number <span aria-hidden="true">*</span></label><input type="tel" id="reg-phone" name="phone" placeholder="10-digit mobile number" required autocomplete="tel" pattern="[0-9]{10}" maxlength="10" /><span class="form-error" role="alert"></span></div>
+        <div class="form-group"><label for="reg-skills">Current Skills</label><input type="text" id="reg-skills" name="skills" placeholder="e.g. HTML, CSS, Python (optional)" /></div>
+        <div class="form-group"><label for="reg-reason">Why do you want to join? <span aria-hidden="true">*</span></label><textarea id="reg-reason" name="reason" rows="3" placeholder="Tell us about your interest..." required></textarea><span class="form-error" role="alert"></span></div>
+        <button type="submit" class="btn btn-primary btn-full"><i data-lucide="send" aria-hidden="true"></i> Submit Registration</button>
+      </form>
+      <div class="form-success" id="formSuccess" hidden><i data-lucide="check-circle" aria-hidden="true"></i><h3>Registration Submitted!</h3><p>Thank you for your interest in Web Craft. We'll be in touch soon.</p></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
